@@ -1,0 +1,232 @@
+/* SUDODUDE - ANDY ZIM  */
+html {
+  height: 100%;
+  background-color: transparent !important;
+  background:transparent !important;
+  font-family: Segoe UI;
+  text-align: center;
+}
+body{
+  background-color: transparent !important;
+  background:transparent !important;
+}
+
+div{
+  background: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 0px;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.content {
+  margin-top: 6vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: transparent;
+  padding: 10px;
+}
+
+.test {
+  color: yellow;
+  transition: 0.3s;
+}
+
+.test:hover {
+  background: yellow;
+  color: #181818;
+}
+
+.hideText td {
+  color: transparent;
+}
+
+/* MODAL TESTING */
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 10;
+  left: 10;
+  overflow-y:hidden;
+
+  background-color: rgba(0, 0, 0, 0.55);
+  transition: opacity .3s ease;
+
+}
+
+.modal-wrapper {
+  display: table-row ;
+  align-content: center;
+}
+
+.modal-container {
+  height: 650px;
+  width: 400px;
+  margin: 0px auto;
+  overflow-y: scroll;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .50);
+  transition: all .3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.modal-header h3 {
+  margin-top: 0;
+  color: #42b983;
+}
+
+.modal-body {
+  margin: 20px 0;
+  display: inline;
+
+}
+
+.modal-default-button {
+  float: right;
+}
+
+.btn {
+  margin-left: 5vh;
+}
+
+
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/* DROPDOWN START */
+.dropbtn {
+  background-color: #D8A138;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  width: 400px;
+}
+
+.choose-ped{
+  background-color: #1FACAE;
+  color: white;
+  padding: 16px;
+  font-size: 14px;
+  border: none;
+  width: 400px;
+}
+
+.choose-ped:hover, .choose-ped:focus {
+  background-color: #1DA1A3;
+}
+
+#ped-dropdown {
+  
+  border-box: box-sizing;
+  background-image: url('../imgs/images/search.png');
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 20px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  max-height: 350px;
+
+}
+
+#ped-dropdown:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+}
+
+#ped-search-input { 
+  width: 400px;
+}
+
+.dropdown-content {
+  overflow-y: scroll;
+  position: relative;
+  background-color: #f6f6f6;
+  width: 400px;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+.search-ped-container {
+  overflow-y: hidden;
+  position: relative;
+  background-color: #f6f6f6;
+  
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+.dropdown-content-data {
+  background-color: #f6f6f6;
+  min-width: 230px;
+  margin-left: -5vh;
+}
+
+.dropdown-content p {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown p:hover {background-color: #ddd;}
+
+.show {display: block;}
+/* DROPDOWN END */
+
+
+/* ROTATE START */
+.rotation {
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 80vw;
+}
+
+.rotation input:focus {
+   outline: none;
+}
+
+.rotation input[type=range] {
+   -webkit-appearance: none;
+   width: 80vw;
+   background: transparent;
+}
+
+.rotation input[type=range]::-webkit-slider-runnable-track {
+   height: 100vh;
+}
+
+.rotation input[type=range]::-webkit-slider-thumb {
+   height: 100vh;
+   width: 10vw;
+   -webkit-appearance: none;
+}
+
+/* ROTATE END */

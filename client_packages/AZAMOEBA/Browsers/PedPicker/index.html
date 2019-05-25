@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<!-- SUDODUDE - ANDY ZIM  -->
+		<title>SUDODUDE - PED PICKER</title>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1.0" name="viewport">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" href="./public/css/index.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<script src="../vue.js"></script>
+	</head>
+
+	<body style="">
+		<div id="ped-picker-app">
+			<div class="container">
+				<div class="content">
+					<modal v-if="this.showParentsChildrenInfo" @close="showParentsChildrenInfo = false"><h3 slot="header"><button class="btn btn-danger modal-default-button" @click="close()">
+		                {{ closeButtonText }}
+		              </button>{{ selectedParentItem }}</h3>
+						<div slot="body"> 
+						     <div class="dropdown">
+							  <div class="dropbtn"> {{ searchPedsText }}</div>
+							  <div id="ped-dropdown" class="dropdown-content">
+							  	<input class="search-ped-container" type="text" placeholder="Search.." id="ped-search-input" @input="filterPeds">
+							  	
+							    <div id="d-content-data" class="dropdown-content-data" >
+							    	<p v-for="childItem in childItems" :style="" class="" :key="childItem" @click="testPedModel(childItem.name, childItem.hash)">{{ childItem.name }}</p>
+							    </div>
+							    
+							  </div>
+							</div>
+							<button v-if="selectedPed" class="choose-ped" @click="choosePedModel(selectedPed.name, selectedPed.hash)"> {{ useSelectedPedText }} {{ selectedPed.name }}</button>
+					 	</div>
+ 	 				</modal>
+				</div>
+			</div>
+			<div class="rotation">
+				<input type="range" min="-180" max="360" step="1" v-model.number="camRotation" @input="changeCamRotation">
+			</div>
+		</div>
+	</body>
+
+	<script type="text/x-template" id="modal-template">
+		<transition name="modal">
+		    <div class="modal-mask">
+		      <div class="modal-wrapper">
+		        <div class="modal-container">  	
+		          <div class="modal-header">
+		            <slot name="header">
+		              default header
+		            </slot>
+		          </div>
+		          <div class="modal-body">
+		            <slot name="body">
+		              <slot name="m-content"></slot>
+		            </slot>
+		          </div>
+		          <div class="modal-footer">
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		</transition>
+	</script>
+	<script src="./public/data/peds_data.js" type="text/javascript"></script>
+	<script src="./public/js/index.js" type="text/javascript"></script>
+</html>
